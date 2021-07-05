@@ -1,0 +1,2 @@
+SELECT * FROM pedestal WHERE measurement_id IN (SELECT max FROM(SELECT hybrid_id,MAX(measurement_id) as max FROM hybrid_overview GROUP BY hybrid_id) as foo) AND Hybrid_ID NOT IN ('M14','M15','MV-11','MV-9','15','16','23','24','a00000ae') AND Hybrid_ID IN (SELECT Hybrid_ID FROM Hybrid_Overview WHERE Hybrid_Class IN ('a','b'));
+
